@@ -2,15 +2,15 @@ version: '3.8'
 
 services:
   mongo:
-    restart: always
     image: mongo:latest
-    container_name: "mongodb"
+    container_name: mongo_container
     environment:
-      - MONGODB_USERNAME=test
-      - MONGODB_PASSWORD=test123
-      - MONGODB_DATABASE=Enron
-    volumes:
-      - ./data/db:/var/micro-data/mongodb/data/db
+    - MONGODB_USERNAME=test
+    - MONGODB_PASSWORD=test123
+    - MONGODB_DATABASE=Enron
     ports:
-      - 27017:27017
-    command: db.createCollection(\"teachers\")
+      - "27017:27017"
+    volumes:
+      - ./data:/data/db
+    command: >
+      bash -c "mongo --eval 'db = db.getSiblingDB(\"Enron\"); db.createCollection(\"enrondatabase\");'"
