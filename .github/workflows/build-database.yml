@@ -11,10 +11,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Checkout Repository
       with:
         lfs: 'true'
-        
     - name: Run Docker Compose
       run: docker compose up -d
 
