@@ -11,5 +11,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Test
-      run: echo "testing"
+    - name: Checkout and run Docker Compose
+      run: docker compose up -d
+
+    - name: Run import script
+      run: python import_dataset.py
