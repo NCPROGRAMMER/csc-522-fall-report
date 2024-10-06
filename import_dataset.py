@@ -17,18 +17,18 @@ from csv import reader
 # Opening the 'emails.csv' file in read mode
 with open('emails.csv', 'r') as read_obj:
     csv_reader = reader(read_obj)
-    
+
     # Iterating through each row of the CSV file
     for row in csv_reader:
-        print(row)
-        # Creating a dictionary to store the email data
-        email_data = {}
+        if "_sent_mail" in str(row[0]):
+            # Creating a dictionary to store the email data
+            email_data = {}
+
+            # Storing the contents of the first column in the 'file' key of the dictionary
+            email_data['file'] = row[0]
+
+            # Storing the contents of the second column in the 'message' key of the dictionary
+            email_data['message'] = row[1]
         
-        # Storing the contents of the first column in the 'file' key of the dictionary
-        email_data['file'] = row[0]
-        
-        # Storing the contents of the second column in the 'message' key of the dictionary
-        email_data['message'] = row[1]
-        
-        # Inserting the email data into the enronmails10 collection
-        collection.insert_one(email_data)
+            # Inserting the email data into the enronmails10 collection
+            collection.insert_one(email_data)
