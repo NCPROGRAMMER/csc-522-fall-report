@@ -11,7 +11,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Checkout and run Docker Compose
+    - name: Checkout Repository
+      with:
+        lfs: 'true'
+        
+    - name: Run Docker Compose
       run: docker compose up -d
 
     - name: Install relevant Python libraries
