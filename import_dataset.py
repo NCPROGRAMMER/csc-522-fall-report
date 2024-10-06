@@ -20,6 +20,7 @@ with open('emails.csv', 'r') as read_obj:
     
     # Iterating through each row of the CSV file
     for row in csv_reader:
+        print(row)
         # Creating a dictionary to store the email data
         email_data = {}
         
