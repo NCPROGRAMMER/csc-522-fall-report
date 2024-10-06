@@ -13,4 +13,4 @@ services:
       - ./data/db:/var/micro-data/mongodb/data/db
     ports:
       - 27017:27017
-    command: db.createCollection(“teachers”)
+    command: 'db.createCollection(“teachers”)'
