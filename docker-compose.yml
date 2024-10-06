@@ -7,10 +7,10 @@ services:
     environment:
     - MONGODB_USERNAME=test
     - MONGODB_PASSWORD=test123
-    - MONGODB_DATABASE=Enron
+    - MONGODB_DATABASE=enron
     ports:
       - "27017:27017"
     volumes:
       - ./data:/data/db
     command: >
-      bash -c "mongo --eval 'db = db.getSiblingDB(\"Enron\"); db.createCollection(\"enrondatabase\");'"
+      bash -c "mongo --eval 'db = db.getSiblingDB(\"enron\"); db.createCollection(\"enronmails\");'"
