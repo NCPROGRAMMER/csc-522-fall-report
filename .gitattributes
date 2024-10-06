@@ -1,1 +1,2 @@
-enron_mail_20150507.tar.gz filter=lfs diff=lfs merge=lfs -text
+emails.csv.zip filter=lfs diff=lfs merge=lfs -text
+emails.csv filter=lfs diff=lfs merge=lfs -text
