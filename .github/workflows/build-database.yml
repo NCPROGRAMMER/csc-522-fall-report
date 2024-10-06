@@ -14,5 +14,8 @@ jobs:
     - name: Checkout and run Docker Compose
       run: docker compose up -d
 
+    - name: Install relevant Python libraries
+      run: pip install pymongo
+
     - name: Run import script
       run: python import_dataset.py
